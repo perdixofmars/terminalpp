@@ -74,6 +74,15 @@ endif()
 add_library(terminalpp)
 add_library(KazDragon::terminalpp ALIAS terminalpp)
 
+set(TERMINALPP_GENERATED_INCLUDE_DIR
+    "${PROJECT_BINARY_DIR}/generated/include")
+set(TERMINALPP_GENERATED_EXPORT_HEADER
+    "${TERMINALPP_GENERATED_INCLUDE_DIR}/terminalpp/detail/export.hpp")
+set(TERMINALPP_GENERATED_VERSION_HEADER
+    "${TERMINALPP_GENERATED_INCLUDE_DIR}/terminalpp/version.hpp")
+
+file(MAKE_DIRECTORY "${TERMINALPP_GENERATED_INCLUDE_DIR}/terminalpp/detail")
+
 target_sources(terminalpp
     PRIVATE
         include/terminalpp/algorithm/for_each_in_region.hpp
@@ -89,7 +98,7 @@ target_sources(terminalpp
         include/terminalpp/detail/ascii.hpp
         include/terminalpp/detail/element_difference.hpp
         include/terminalpp/detail/element_udl.hpp
-        include/terminalpp/detail/export.hpp
+        ${TERMINALPP_GENERATED_EXPORT_HEADER}
         include/terminalpp/detail/overloaded.hpp
         include/terminalpp/detail/parser.hpp
         include/terminalpp/detail/well_known_virtual_key.hpp
@@ -116,7 +125,7 @@ target_sources(terminalpp
         include/terminalpp/terminal_state.hpp
         include/terminalpp/terminalpp.hpp
         include/terminalpp/token.hpp
-        include/terminalpp/version.hpp
+        ${TERMINALPP_GENERATED_VERSION_HEADER}
         include/terminalpp/virtual_key.hpp
 
         src/detail/parser.cpp
@@ -154,6 +163,7 @@ target_link_libraries(terminalpp
 
 target_include_directories(terminalpp
     PUBLIC
+        $<BUILD_INTERFACE:${TERMINALPP_GENERATED_INCLUDE_DIR}>
         $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include/terminalpp-${TERMINALPP_VERSION}>)
 
@@ -183,12 +193,12 @@ target_compile_features(terminalpp PUBLIC cxx_std_20)
 
 generate_export_header(terminalpp
     EXPORT_FILE_NAME
-        "${PROJECT_SOURCE_DIR}/include/terminalpp/detail/export.hpp"
+        "${TERMINALPP_GENERATED_EXPORT_HEADER}"
 )
 
 configure_file(
     ${PROJECT_SOURCE_DIR}/include/terminalpp/version.hpp.in
-    ${PROJECT_SOURCE_DIR}/include/terminalpp/version.hpp
+    ${TERMINALPP_GENERATED_VERSION_HEADER}
     @ONLY
 )
 
@@ -243,6 +253,20 @@ install(
         include/
     DESTINATION
         include/terminalpp-${TERMINALPP_VERSION}
+)
+
+install(
+    FILES
+        "${TERMINALPP_GENERATED_EXPORT_HEADER}"
+    DESTINATION
+        include/terminalpp-${TERMINALPP_VERSION}/terminalpp/detail
+)
+
+install(
+    FILES
+        "${TERMINALPP_GENERATED_VERSION_HEADER}"
+    DESTINATION
+        include/terminalpp-${TERMINALPP_VERSION}/terminalpp
 )
 
 install(
