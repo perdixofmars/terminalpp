@@ -40,7 +40,7 @@ TEST_P(control_sequences_with_strings, can_be_streamed_to_an_ostream)
     ASSERT_EQ(expected_string, stream.str());
 }
 
-constexpr terminalpp::control_sequence default_sequence = {};
+terminalpp::control_sequence const default_sequence = {};
 
 control_sequence_test_data const control_sequence_strings[] = {
     // A default sequence should just print out its wrapper
