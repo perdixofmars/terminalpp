@@ -20,7 +20,7 @@ class colour_attribute_strings
 {
 };
 
-constexpr colour_attribute_data colour_attributes[] = {
+colour_attribute_data const colour_attributes[] = {
     {{.foreground_colour_ = terminalpp::palette::black},   "\x1B[30mx"_tb      },
     {{.foreground_colour_ = terminalpp::palette::maroon},  "\x1B[31mx"_tb      },
     {{.foreground_colour_ = terminalpp::palette::green},   "\x1B[32mx"_tb      },

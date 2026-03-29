@@ -37,7 +37,7 @@ TEST_P(a_terminal_with_an_unknown_location, sends_bytes_when_moving_the_cursor)
     EXPECT_THAT(channel_.written_, ContainerEq(expected_result));
 }
 
-constexpr unknown_location_move_data unknown_location_move_data_table[] = {
+unknown_location_move_data const unknown_location_move_data_table[] = {
     {{0, 0}, "\x1B[H"_tb   },
     {{0, 4}, "\x1B[5H"_tb  },
     {{2, 0}, "\x1B[1;3H"_tb},
@@ -80,7 +80,7 @@ TEST_P(a_terminal_with_a_known_location, sends_bytes_when_moving_the_cursor)
     EXPECT_THAT(channel_.written_, ContainerEq(expected_result));
 }
 
-constexpr known_location_move_data known_location_move_data_table[] = {
+known_location_move_data const known_location_move_data_table[] = {
     // Moving to the current location sends nothing.
     {{0, 0},   {0, 0},   ""_tb         },
     {{7, 6},   {7, 6},   ""_tb         },
