@@ -78,7 +78,7 @@ TEST_P(high_colours_with_strings, can_be_streamed_to_an_ostream)
     ASSERT_EQ(expected_string, stream.str());
 }
 
-constexpr high_colour_string high_colour_strings[] = {
+high_colour_string const high_colour_strings[] = {
     {0, 0, 0, "#000"},
     {3, 0, 0, "#300"},
     {0, 4, 0, "#040"},
@@ -113,7 +113,7 @@ TEST_P(greyscale_colours_with_strings, can_be_streamed_to_an_ostream)
     ASSERT_EQ(expected_string, stream.str());
 }
 
-constexpr greyscale_string greyscale_strings[] = {
+greyscale_string const greyscale_strings[] = {
     // clang-format off
     { 0,  "#00" },
     { 9,  "#09" },
@@ -151,7 +151,7 @@ TEST_P(true_colours_with_strings, can_be_streamed_to_an_ostream)
     ASSERT_EQ(expected_string, stream.str());
 }
 
-constexpr true_colour_string true_colour_strings[] = {
+true_colour_string const true_colour_strings[] = {
     // clang-format off
     { 0,   0,   0,   "#000000" },
     { 80,  0,   0,   "#500000" },

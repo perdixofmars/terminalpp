@@ -38,12 +38,12 @@ struct TERMINALPP_EXPORT attribute
         attribute const &lhs, attribute const &rhs) noexcept = default;
 
     // Graphics Attributes
-    colour foreground_colour_;
-    colour background_colour_;
-    intensity intensity_;
-    underlining underlining_;
-    polarity polarity_;
-    blinking blinking_;
+    colour foreground_colour_{};
+    colour background_colour_{};
+    intensity intensity_{};
+    underlining underlining_{};
+    polarity polarity_{};
+    blinking blinking_{};
 };
 
 //* =========================================================================
