@@ -52,7 +52,8 @@ find_package(Boost 1.69.0 REQUIRED)
 
 # If we are building with tests, then we require the GTest library
 if (${TERMINALPP_WITH_TESTS})
-    find_package(GTest REQUIRED)
+    find_package(Threads REQUIRED)
+    find_package(GTest CONFIG REQUIRED)
 endif()
 
 # When building shared objects, etc., we only want to export certain
@@ -327,8 +328,8 @@ target_compile_options(terminalpp_tester
 target_link_libraries(terminalpp_tester 
     PRIVATE
         terminalpp
-        GTest::GTest
-        GTest::Main
+        GTest::gtest
+        GTest::gtest_main
 )
 
 add_test(terminalpp_test terminalpp_tester)
