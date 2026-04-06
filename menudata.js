@@ -53,6 +53,7 @@ var menudata={children:[
 {text:"r",url:"functions.html#index_r"},
 {text:"s",url:"functions.html#index_s"},
 {text:"t",url:"functions.html#index_t"},
+{text:"u",url:"functions.html#index_u"},
 {text:"v",url:"functions.html#index_v"},
 {text:"w",url:"functions.html#index_w"},
 {text:"~",url:"functions.html#index__7E"}]},
@@ -78,6 +79,7 @@ var menudata={children:[
 {text:"Typedefs",url:"functions_type.html"},
 {text:"Related Symbols",url:"functions_rela.html",children:[
 {text:"h",url:"functions_rela.html#index_h"},
-{text:"o",url:"functions_rela.html#index_o"}]}]}]},
+{text:"o",url:"functions_rela.html#index_o"},
+{text:"u",url:"functions_rela.html#index_u"}]}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"}]}]}
