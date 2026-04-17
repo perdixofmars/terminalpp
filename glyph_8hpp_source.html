@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Terminal++<span id="projectnumber">&#160;4.0.2.30</span>
+   <div id="projectname">Terminal++<span id="projectnumber">&#160;4.0.2.31</span>
    </div>
    <div id="projectbrief">A C++ library for interacting with ANSI terminal windows</div>
   </td>
@@ -91,8 +91,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;boost/container_hash/hash.hpp&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;compare&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;iosfwd&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;iosfwd&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>terminalpp {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
@@ -198,7 +198,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> N&gt;</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">explicit</span> glyph(<span class="keywordtype">byte</span> <span class="keyword">const</span> (&amp;<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">text</a>)[<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">N</a>]) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      <span class="keyword">requires</span> (<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">N</a> &gt; 5)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keyword">requires</span>(<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">N</a> &gt; 5)</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      : ucharacter_{0}, charset_(terminalpp::charset::utf8)</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    {</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        assign_utf8_bytes(<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">text</a>, <a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">N</a> - 1);</div>
@@ -206,7 +206,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> N&gt;</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keyword">explicit</span> glyph(<span class="keywordtype">char8_t</span> <span class="keyword">const</span> (&amp;<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">text</a>)[<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">N</a>]) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      <span class="keyword">requires</span> (<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">N</a> &gt; 5)</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keyword">requires</span>(<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">N</a> &gt; 5)</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      : ucharacter_{0}, charset_(terminalpp::charset::utf8)</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        assign_utf8_bytes(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">byte</span> <span class="keyword">const </span>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">text</a>), <a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">N</a> - 1);</div>
@@ -402,53 +402,52 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    character_set charset_;</div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">TERMINALPP_EXPORT</a></div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <span class="keywordtype">void</span> assign_utf8_bytes(<span class="keywordtype">byte</span> <span class="keyword">const</span> *<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">text</a>, std::size_t <a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">length</a>) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    [[<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> uses_pooled_utf8() <a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">const</a> <a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">noexcept</a></div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    {</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        <span class="keywordflow">return</span> charset_ == terminalpp::charset::utf8 &amp;&amp; ucharacter_[0] == 0xFF;</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    }</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    <span class="keyword">friend</span> <a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">TERMINALPP_EXPORT</a> bytes utf8_bytes(glyph <span class="keyword">const</span> &amp;<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">gly</a>) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>};</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <span class="keywordtype">void</span> assign_utf8_bytes(<span class="keywordtype">byte</span> <span class="keyword">const</span> *<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">text</a>, std::size_t <a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">length</a>) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    [[<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">nodiscard</a>]] <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> uses_pooled_utf8() <a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">const</a> <a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">noexcept</a></div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    {</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        <span class="keywordflow">return</span> charset_ == terminalpp::charset::utf8 &amp;&amp; ucharacter_[0] == 0xFF;</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    }</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    <span class="keyword">friend</span> <a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">TERMINALPP_EXPORT</a> bytes utf8_bytes(glyph <span class="keyword">const</span> &amp;<a class="code hl_function" href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">gly</a>) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>};</div>
 </div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="comment">//* =========================================================================</span></div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span><span class="comment">//* =========================================================================</span></div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>TERMINALPP_EXPORT</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="keywordtype">bool</span> is_printable(glyph <span class="keyword">const</span> &amp;gly) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="comment">//* =========================================================================</span></div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span><span class="comment">//* =========================================================================</span></div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>TERMINALPP_EXPORT</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span><span class="keywordtype">int</span> display_width(glyph <span class="keyword">const</span> &amp;gly) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="comment">//* =========================================================================</span></div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="comment">//* =========================================================================</span></div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>TERMINALPP_EXPORT</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>std::ostream &amp;operator&lt;&lt;(std::ostream &amp;out, glyph <span class="keyword">const</span> &amp;gly);</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>}  <span class="comment">// namespace terminalpp</span></div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> </div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span><span class="keyword">namespace </span>std {</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span><span class="keyword">template</span> &lt;&gt;</div>
-<div class="foldopen" id="foldopen00355" data-start="{" data-end="};">
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno"><a class="line" href="structstd_1_1hash_3_01terminalpp_1_1glyph_01_4.html">  355</a></span><span class="keyword">struct </span>hash&lt;terminalpp::glyph&gt;</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>{</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    <span class="keyword">using </span><a class="code hl_struct" href="structterminalpp_1_1glyph.html">argument_type</a> = <a class="code hl_struct" href="structterminalpp_1_1glyph.html">terminalpp::glyph</a>;</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    <span class="keyword">using </span>result_type = std::size_t;</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span> </div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    [[nodiscard]] result_type operator()(</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>        <a class="code hl_struct" href="structterminalpp_1_1glyph.html">argument_type</a> <span class="keyword">const</span> &amp;elem) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    {</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        <span class="keywordflow">return</span> hash_value(elem);</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    }</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>};</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="comment">//* =========================================================================</span></div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><span class="comment">//* =========================================================================</span></div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>TERMINALPP_EXPORT</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="keywordtype">bool</span> is_printable(glyph <span class="keyword">const</span> &amp;gly) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="comment">//* =========================================================================</span></div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span><span class="comment">//* =========================================================================</span></div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>TERMINALPP_EXPORT</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span><span class="keywordtype">int</span> display_width(glyph <span class="keyword">const</span> &amp;gly) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span><span class="comment">//* =========================================================================</span></div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span><span class="comment">//* =========================================================================</span></div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>TERMINALPP_EXPORT</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>std::ostream &amp;operator&lt;&lt;(std::ostream &amp;out, glyph <span class="keyword">const</span> &amp;gly);</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>}  <span class="comment">// namespace terminalpp</span></div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="keyword">namespace </span>std {</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="foldopen" id="foldopen00354" data-start="{" data-end="};">
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno"><a class="line" href="structstd_1_1hash_3_01terminalpp_1_1glyph_01_4.html">  354</a></span><span class="keyword">struct </span>hash&lt;terminalpp::glyph&gt;</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>{</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    <span class="keyword">using </span><a class="code hl_struct" href="structterminalpp_1_1glyph.html">argument_type</a> = <a class="code hl_struct" href="structterminalpp_1_1glyph.html">terminalpp::glyph</a>;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    <span class="keyword">using </span>result_type = std::size_t;</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    [[nodiscard]] result_type operator()(</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        <a class="code hl_struct" href="structterminalpp_1_1glyph.html">argument_type</a> <span class="keyword">const</span> &amp;elem) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    {</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>        <span class="keywordflow">return</span> hash_value(elem);</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    }</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>};</div>
 </div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span> </div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>}  <span class="comment">// namespace std</span></div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span> </div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>}  <span class="comment">// namespace std</span></div>
 <div class="ttc" id="astructterminalpp_1_1character__set_html"><div class="ttname"><a href="structterminalpp_1_1character__set.html">terminalpp::character_set</a></div><div class="ttdoc">A structure that represents a character set.</div><div class="ttdef"><b>Definition</b> character_set.hpp:45</div></div>
 <div class="ttc" id="astructterminalpp_1_1effect_html"><div class="ttname"><a href="structterminalpp_1_1effect.html">terminalpp::effect</a></div><div class="ttdoc">A structure representing an ANSI graphics effect (e.g. intensity, underlining)</div><div class="ttdef"><b>Definition</b> effect.hpp:27</div></div>
 <div class="ttc" id="astructterminalpp_1_1effect_html_a5bb632ef8f16ee99257a087f3c16592d"><div class="ttname"><a href="structterminalpp_1_1effect.html#a5bb632ef8f16ee99257a087f3c16592d">terminalpp::effect::effect</a></div><div class="ttdeci">constexpr effect() noexcept</div><div class="ttdoc">Initialises the intensity to the default (normal) value.</div><div class="ttdef"><b>Definition</b> effect.hpp:31</div></div>
@@ -470,7 +469,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 16 2026 20:29:57 for Terminal++ by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Apr 17 2026 19:02:08 for Terminal++ by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
