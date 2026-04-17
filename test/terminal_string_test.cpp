@@ -160,31 +160,6 @@ TEST_F(a_terminal, can_stream_a_single_element)
 
 namespace {
 
-class a_terminal_that_supports_unicode_in_all_charsets : public a_terminal
-{
-public:
-    a_terminal_that_supports_unicode_in_all_charsets()
-      : a_terminal{[] {
-            terminalpp::behaviour behaviour;
-            behaviour.unicode_in_all_charsets = true;
-            return behaviour;
-        }()}
-    {
-    }
-};
-
-}  // namespace
-
-TEST_F(
-    a_terminal_that_supports_unicode_in_all_charsets,
-    skips_charset_switch_before_selecting_utf8_charset)
-{
-    terminal_ << R"(\cU\C205\U0057)"_ets;
-    EXPECT_THAT(channel_.written_, ContainerEq("\x1B(U\xCD\x1B%GW"_tb));
-}
-
-namespace {
-
 using write_position_data = std::tuple<
     terminalpp::point,   // Initial cursor position
     terminalpp::string,  // String to write

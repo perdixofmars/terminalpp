@@ -137,14 +137,14 @@ constexpr void change_charset(
 {
     if (source != dest)
     {
+        if (terminal_behaviour.utf8_by_default)
+        {
+            return;
+        }
+
         if (dest == charset::utf8)
         {
-            if (!terminal_behaviour.unicode_in_all_charsets)
-            {
-                change_charset(
-                    source, charset::us_ascii, terminal_behaviour, wc);
-            }
-
+            change_charset(source, charset::us_ascii, terminal_behaviour, wc);
             select_utf8_charset(wc);
         }
         else
